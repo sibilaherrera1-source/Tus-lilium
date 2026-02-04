@@ -30,14 +30,46 @@
           overflow: hidden;
           perspective: 1000px;
           font-family: 'Cormorant Garamond', serif;
-        }
+        }<script>
+  const PASSWORD = "4/2/2007";
+  const startBtn = document.getElementById("startBtn");
+  const startScreen = document.getElementById("startScreen");
+
+  startBtn.addEventListener("click", () => {
+    const input = prompt("💖 Solo tú sabes la fecha (D/M/AAAA) 💖");
+
+    if (input === PASSWORD) {
+      startScreen.classList.add("hidden");
+      // Esto intenta activar la música al entrar
+      const musica = document.querySelector(".song");
+      if(musica) musica.play();
+    } else {
+      alert("Esa no es… pero no pasa nada 💔");
+    }
+  });
+</script>
+      
 
         .start-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #ffffff 0%, #ffe6f0 15%); /* El color que ya tenías */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.hidden {
+    display: none !important;
+}
+        .hidden {
+  display: none !important;
+        }
+        
             
 background: linear-gradient(
     to bottom,
